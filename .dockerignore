@@ -1,0 +1,10 @@
+﻿.venv/
+test_footage/
+*.mp4
+evidence/
+__pycache__/
+*.pyc
+.git/
+node_modules/
+admin/node_modules/
+*.pt

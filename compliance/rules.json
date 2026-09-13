@@ -1,0 +1,51 @@
+{
+  "_comment": "MineGuard Compliance Engine rules. Edit thresholds here without touching code. Each threshold band uses inclusive bounds: a value matches a band when min <= value <= max. The last band (no 'max') is the catch-all. Units: AQI index, gas CO ppm, temperature Celsius, noise dB, dust PM mg/m3. 'critical_combo' lists object labels that must ALL be present to escalate proximity_risk to CRITICAL.",
+  "debounce": {
+    "window_seconds": 5.0,
+    "required_detections": 3
+  },
+  "thresholds": {
+    "aqi_high": [
+      { "severity": "compliant", "min": 0, "max": 149 },
+      { "severity": "warning", "min": 150, "max": 300 },
+      { "severity": "high", "min": 301, "max": 500 },
+      { "severity": "critical", "min": 501 }
+    ],
+    "gas_high": [
+      { "severity": "compliant", "min": 0, "max": 49 },
+      { "severity": "warning", "min": 50, "max": 150 },
+      { "severity": "high", "min": 151, "max": 300 },
+      { "severity": "critical", "min": 301 }
+    ],
+    "temp_high": [
+      { "severity": "compliant", "min": 0, "max": 39 },
+      { "severity": "warning", "min": 40, "max": 45 },
+      { "severity": "high", "min": 46, "max": 50 },
+      { "severity": "critical", "min": 51 }
+    ],
+    "noise_high": [
+      { "severity": "compliant", "min": 0, "max": 84 },
+      { "severity": "warning", "min": 85, "max": 92 },
+      { "severity": "high", "min": 93, "max": 100 },
+      { "severity": "critical", "min": 101 }
+    ],
+    "dust_high": [
+      { "severity": "compliant", "min": 0, "max": 1.9 },
+      { "severity": "warning", "min": 2.0, "max": 3.5 },
+      { "severity": "high", "min": 3.6, "max": 5.0 },
+      { "severity": "critical", "min": 5.1 }
+    ]
+  },
+  "cv": {
+    "no_helmet": { "severity": "high", "confidence_min": 0.6 },
+    "no_vest": { "severity": "high", "confidence_min": 0.6 },
+    "restricted_zone_entry": { "severity": "critical" },
+    "fire": { "severity": "critical" },
+    "smoke": { "severity": "high" },
+    "fall": { "severity": "high" },
+    "proximity_risk": {
+      "severity": "high",
+      "critical_combo": ["worker", "heavy_vehicle"]
+    }
+  }
+}

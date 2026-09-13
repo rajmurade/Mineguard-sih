@@ -1,0 +1,39 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.log
+
+# CV pipeline artifacts
+evidence/
+runs/          # ultralytics working dir
+*.pt           # downloaded model weights
+*.mp4
+*.avi
+
+# Frontend build artifacts (both apps)
+node_modules/
+admin/node_modules/
+admin/dist/
+dashboard/node_modules/
+dashboard/dist/
+
+# Docker/DB
+*.smoke.db
+pgdata/
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Scratch/test artifacts opencode created along the way
+_uvicorn*.log
+_uv.*
+_pytest*.txt

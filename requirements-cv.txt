@@ -1,0 +1,7 @@
+# MineGuard CV pipeline dependencies (pip install -r requirements-cv.txt)
+# Installed alongside requirements.txt (backend).
+
+opencv-python>=4.10.0
+ultralytics>=8.3.0
+huggingface-hub>=0.30.0
+requests>=2.32.0

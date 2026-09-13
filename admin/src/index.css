@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #1b1f24;
+  color: #e6e8eb;
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.ws-badge {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: #444;
+}
+.ws-badge.connected {
+  background: #2e7d32;
+}
+.ws-badge.disconnected {
+  background: #b71c1c;
+}
+.ws-badge.connecting {
+  background: #f9a825;
+  color: #222;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 800px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: #24292f;
+  border: 1px solid #3a4149;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+select,
+input[type="range"] {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+}
+
+select {
+  padding: 6px;
+  background: #2f363d;
+  color: inherit;
+  border: 1px solid #4a525a;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 6px;
+  background: #2f6f4f;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover {
+  filter: brightness(1.15);
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+button.danger {
+  background: #b71c1c;
+}
+
+.hint {
+  font-size: 12px;
+  color: #aab;
+}
+
+.empty {
+  color: #888;
+  font-style: italic;
+}
+
+.feed {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.feed-item {
+  border-bottom: 1px solid #333a42;
+  padding: 10px 4px;
+}
+
+.feed-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.severity-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+.feed-detail {
+  font-size: 12px;
+  color: #c8cdd4;
+  margin-top: 2px;
+
+  word-break: break-word;
+}
